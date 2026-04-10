@@ -24,13 +24,23 @@ jobs:
       - name: Build static export
         run: npm run build
 
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
       - name: Upload to SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp
-          port: 22
-          local-dir: ./out/
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
+        run: |
+          sshpass -p "$FTP_PASSWORD" sftp \
+            -P 22 \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            -v \
+            "$FTP_USERNAME@$FTP_SERVER" <<SFTPEOF
+          mkdir $FTP_REMOTE_DIR
+          put -r out/* $FTP_REMOTE_DIR
+          bye
+          SFTPEOF
