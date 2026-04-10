@@ -24,19 +24,13 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
       - name: Upload to SFTP
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
-          FTP_PORT: 22
-        run: |
-          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$FTP_SERVER:$FTP_PORT" <<EOF
-          set sftp:auto-confirm yes
-          mirror -R --delete --verbose ./out/ "$FTP_REMOTE_DIR"
-          bye
-          EOF
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: sftp
+          port: 22
+          local-dir: ./out/
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
