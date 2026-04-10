@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="seo-title">ALENTIO | Innovación real para empresas de verdad</title>
+    <meta id="seo-description" name="description"
+        content="ALENTIO es una consultoría cercana de innovación aplicada. Diseñamos y dirigimos proyectos tecnológicos reales, eficientes y comprensibles para empresas que quieren innovar con sentido común." />
+    <meta name="theme-color" content="#ec772b" />
+    <meta id="seo-og-title" property="og:title" content="ALENTIO | Innovación real para empresas de verdad" />
+    <meta id="seo-og-description" property="og:description"
+        content="Consultoría boutique de innovación aplicada para empresas. Soluciones viables, iterativas y escalables." />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alentio: {
+                            50: '#fef5ee',
+                            100: '#fde8da',
+                            200: '#fbd0b6',
+                            300: '#f8b08a',
+                            400: '#f29161',
+                            500: '#ec772b',
+                            600: '#db661d',
+                            700: '#b74f14',
+                            800: '#924013',
+                            900: '#773713'
+                        },
+                        stone: {
+                            950: '#1f1d1a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'ui-sans-serif', 'system-ui'],
+                        display: ['Playfair Display', 'serif']
+                    },
+                    boxShadow: {
+                        soft: '0 20px 60px rgba(27, 24, 19, 0.10)',
+                        card: '0 12px 34px rgba(25, 22, 18, 0.07)'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-[#f7f5f2] text-stone-800 antialiased selection:bg-alentio-200 selection:text-stone-950">
+    <div class="site-bg" aria-hidden="true"></div>
+
+    <header id="top" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-500">
+        <div class="mx-auto max-w-7xl px-6 lg:px-10">
+            <div id="mainHeader"
+                class="mt-4 flex items-center justify-between rounded-2xl border border-white/50 bg-white/65 px-4 py-3 shadow-soft backdrop-blur-xl lg:px-6">
+                <a href="#inicio" class="shrink-0">
+                    <img src="assets/logo-alentio.png" alt="Logo de ALENTIO" class="h-8 w-auto lg:h-10" />
+                </a>
+
+                <nav class="hidden items-center gap-8 text-sm font-semibold text-stone-700 lg:flex">
+                    <a href="#quienes" class="nav-link" data-i18n="nav.about">Quiénes somos</a>
+                    <a href="#servicios" class="nav-link" data-i18n="nav.services">Servicios</a>
+                    <a href="#proyectos" class="nav-link" data-i18n="nav.projects">Proyectos</a>
+                    <a href="#proceso" class="nav-link" data-i18n="nav.process">Cómo trabajamos</a>
+                    <a href="#ambitos" class="nav-link" data-i18n="nav.sectors">Ámbitos</a>
+                    <a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a>
+                </nav>
+
+                <div class="hidden items-center gap-3 lg:flex">
+                    <select id="langDesktop"
+                        class="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-stone-700 outline-none">
+                        <option value="es">ES</option>
+                        <option value="ca">CA</option>
+                        <option value="en">EN</option>
+                    </select>
+                    <a href="#contacto" class="btn-primary" data-i18n="cta.talk">Hablemos</a>
+                </div>
+
+                <button id="mobileMenuBtn"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 bg-white text-stone-700 lg:hidden"
+                    aria-label="Abrir menú">
+                    <span class="mobile-menu-icon"></span>
+                </button>
+            </div>
+
+            <div id="mobileMenu"
+                class="mobile-panel mt-2 rounded-2xl border border-stone-200 bg-white p-4 shadow-soft lg:hidden">
+                <nav class="flex flex-col gap-3 text-sm font-semibold text-stone-700">
+                    <a href="#quienes" class="mobile-link" data-i18n="nav.about">Quiénes somos</a>
+                    <a href="#servicios" class="mobile-link" data-i18n="nav.services">Servicios</a>
+                    <a href="#proyectos" class="mobile-link" data-i18n="nav.projects">Proyectos</a>
+                    <a href="#proceso" class="mobile-link" data-i18n="nav.process">Cómo trabajamos</a>
+                    <a href="#ambitos" class="mobile-link" data-i18n="nav.sectors">Ámbitos</a>
+                    <a href="#contacto" class="mobile-link" data-i18n="nav.contact">Contacto</a>
+                    <select id="langMobile"
+                        class="rounded-xl border border-stone-300 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-stone-700 outline-none">
+                        <option value="es">ES</option>
+                        <option value="ca">CA</option>
+                        <option value="en">EN</option>
+                    </select>
+                    <a href="#contacto" class="btn-primary text-center" data-i18n="cta.talk">Hablemos</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="inicio" class="relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-36 lg:px-10 lg:pt-40">
+        <section class="grid items-center gap-16 pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:pb-28">
+            <div class="reveal space-y-8">
+                <p class="eyebrow" data-i18n="hero.eyebrow">Consultoría boutique de innovación aplicada</p>
+                <h1
+                    class="max-w-4xl text-balance font-display text-5xl leading-[1.02] text-stone-950 sm:text-6xl lg:text-7xl">
+                    <span data-i18n="hero.claim">Innovación real para empresas de verdad</span>
+                </h1>
+                <p class="max-w-2xl text-lg leading-relaxed text-stone-600 sm:text-xl">
+                    <span data-i18n="hero.subtitle">Acompañamos a empresas que quieren innovar con sentido común,
+                        diseñando y dirigiendo proyectos tecnológicos reales, eficientes y comprensibles.</span>
+                </p>
+                <div class="flex flex-wrap gap-3 pt-1">
+                    <a href="#contacto" class="btn-primary" data-i18n="cta.talk">Hablemos</a>
+                    <a href="#servicios" class="btn-secondary" data-i18n="cta.services">Ver servicios</a>
+                </div>
+            </div>
+
+            <div class="reveal hero-art" style="--delay: 120ms" data-i18n-aria-label="hero.visualLabel"
+                aria-label="Composición visual tecnológica minimalista">
+                <div class="hero-frame">
+                    <img src="assets/images/hero-workspace.png" alt="Equipo en entorno de trabajo innovador"
+                        class="hero-image" loading="eager" decoding="async" />
+                    <div class="hero-image-overlay" aria-hidden="true"></div>
+                    <div class="orbe orbe-a"></div>
+                    <div class="orbe orbe-b"></div>
+                    <div class="hero-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quienes" class="reveal section-block scroll-mt-28">
+            <p class="eyebrow" data-i18n="about.eyebrow">Quiénes somos</p>
+            <h2 class="section-title" data-i18n="about.title">Consultoría cercana de innovación aplicada</h2>
+            <p class="section-text max-w-4xl">
+                <span data-i18n="about.body">ALENTIO es un despacho-taller de innovación: cercano, práctico y orientado
+                    a resultados.</span>
+            </p>
+            <ul class="mt-8 grid gap-4 md:grid-cols-3">
+                <li class="info-pill" data-i18n="about.points.0">Pensamos en pequeño para construir en grande</li>
+                <li class="info-pill" data-i18n="about.points.1">Priorizamos quick wins</li>
+                <li class="info-pill" data-i18n="about.points.2">Soluciones claras y comprensibles</li>
+            </ul>
+        </section>
+
+        <section id="servicios" class="section-spacing scroll-mt-28">
+            <div class="reveal">
+                <p class="eyebrow" data-i18n="services.eyebrow">Servicios</p>
+                <h2 class="section-title" data-i18n="services.title">Capacidad real para diseñar y ejecutar</h2>
+            </div>
+
+            <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                <article class="reveal service-card">
+                    <div class="icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M5 18V7l7-3 7 3v11l-7 3-7-3Z" stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="services.items.0">Consultoría de innovación</h3>
+                </article>
+                <article class="reveal service-card" style="--delay: 80ms">
+                    <div class="icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 7h16M7 4v16M17 4v16" stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="services.items.1">Dirección de proyectos tecnológicos</h3>
+                </article>
+                <article class="reveal service-card" style="--delay: 140ms">
+                    <div class="icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 4v16M4 12h16M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="services.items.2">IA y digitalización de procesos</h3>
+                </article>
+                <article class="reveal service-card" style="--delay: 200ms">
+                    <div class="icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.6" />
+                            <circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="1.6" />
+                            <path d="M10.5 10.5 13.5 13.5" stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="services.items.3">IoT y gemelos digitales</h3>
+                </article>
+                <article class="reveal service-card" style="--delay: 260ms">
+                    <div class="icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 18h16M7 18V8h10v10M10 8V5h4v3" stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="services.items.4">Diseño tecnológico</h3>
+                </article>
+            </div>
+        </section>
+
+        <section id="proceso" class="section-spacing scroll-mt-28">
+            <div class="reveal">
+                <p class="eyebrow" data-i18n="process.eyebrow">Cómo trabajamos</p>
+                <h2 class="section-title" data-i18n="process.title">Método claro, iterativo y con riesgo controlado</h2>
+            </div>
+
+            <ol class="timeline mt-10">
+                <li class="reveal"><span>01</span><span data-i18n="process.steps.0">Escuchamos</span></li>
+                <li class="reveal" style="--delay: 70ms"><span>02</span><span data-i18n="process.steps.1">Detectamos
+                        oportunidades</span></li>
+                <li class="reveal" style="--delay: 120ms"><span>03</span><span data-i18n="process.steps.2">Diseñamos
+                        solución realista</span></li>
+                <li class="reveal" style="--delay: 170ms"><span>04</span><span data-i18n="process.steps.3">Buscamos
+                        partners adecuados</span></li>
+                <li class="reveal" style="--delay: 220ms"><span>05</span><span data-i18n="process.steps.4">Implementamos
+                        paso a paso</span></li>
+                <li class="reveal" style="--delay: 260ms"><span>06</span><span data-i18n="process.steps.5">Validamos y
+                        escalamos</span></li>
+            </ol>
+        </section>
+
+        <section id="proyectos" class="section-spacing scroll-mt-28">
+            <div class="reveal">
+                <p class="eyebrow" data-i18n="projects.eyebrow">Proyectos</p>
+                <h2 class="section-title" data-i18n="projects.title">Referencias de innovación aplicada</h2>
+            </div>
+
+            <div class="mt-8 grid gap-5 md:grid-cols-2">
+                <article class="reveal project-card">
+                    <figure class="project-media">
+                        <img src="assets/images/hero-campnou.png" alt="Proyecto de gemelo digital para estadio"
+                            class="project-image" loading="lazy" decoding="async" />
+                    </figure>
+                    <div class="project-meta">
+                        <p class="project-kicker" data-i18n="projects.items.0.kicker">Gemelo digital</p>
+                        <span class="project-tag" data-i18n="projects.items.0.tag">Infraestructura</span>
+                    </div>
+                    <h3 data-i18n="projects.items.0.title">FC Barcelona · Spotify Camp Nou</h3>
+                    <p data-i18n="projects.items.0.description">Referencia en modelado digital del estadio para
+                        planificación operativa, simulación y toma de decisiones en tiempo real.</p>
+                </article>
+                <article class="reveal project-card" style="--delay: 60ms">
+                    <figure class="project-media">
+                        <img src="assets/images/hero-smartcity-day.png"
+                            alt="Proyecto de ciudad inteligente y sostenible" class="project-image" loading="lazy"
+                            decoding="async" />
+                    </figure>
+                    <div class="project-meta">
+                        <p class="project-kicker" data-i18n="projects.items.1.kicker">Smart City</p>
+                        <span class="project-tag" data-i18n="projects.items.1.tag">Urbanismo</span>
+                    </div>
+                    <h3 data-i18n="projects.items.1.title">L'Hospitalet de Llobregat</h3>
+                    <p data-i18n="projects.items.1.description">Proyectos urbanos orientados a datos para optimizar
+                        movilidad, sostenibilidad y eficiencia de servicios públicos.</p>
+                </article>
+                <article class="reveal project-card" style="--delay: 120ms">
+                    <figure class="project-media">
+                        <img src="assets/images/hero-workspace.png" alt="Proyecto de digital factory industrial"
+                            class="project-image" loading="lazy" decoding="async" />
+                    </figure>
+                    <div class="project-meta">
+                        <p class="project-kicker" data-i18n="projects.items.2.kicker">Digital Factory</p>
+                        <span class="project-tag" data-i18n="projects.items.2.tag">Industria</span>
+                    </div>
+                    <h3 data-i18n="projects.items.2.title">Navantia</h3>
+                    <p data-i18n="projects.items.2.description">Transformación digital industrial con trazabilidad,
+                        integración de sistemas y mejora continua de procesos productivos.</p>
+                </article>
+                <article class="reveal project-card" style="--delay: 180ms">
+                    <figure class="project-media">
+                        <img src="assets/images/hero-smartcity-night.png" alt="Proyecto IoT en entorno conectado"
+                            class="project-image" loading="lazy" decoding="async" />
+                    </figure>
+                    <div class="project-meta">
+                        <p class="project-kicker" data-i18n="projects.items.3.kicker">Digital IoT</p>
+                        <span class="project-tag" data-i18n="projects.items.3.tag">IoT</span>
+                    </div>
+                    <h3 data-i18n="projects.items.3.title">Entornos conectados</h3>
+                    <p data-i18n="projects.items.3.description">Despliegue de sensorización e inteligencia operativa
+                        para monitorizar activos y anticipar decisiones críticas.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-spacing">
+            <div class="reveal">
+                <p class="eyebrow" data-i18n="philosophy.eyebrow">Filosofía</p>
+                <h2 class="section-title" data-i18n="philosophy.title">Pies en el suelo, resultados en marcha</h2>
+            </div>
+
+            <div class="mt-8 grid gap-5 lg:grid-cols-2">
+                <article class="reveal compare-card">
+                    <h3 data-i18n="philosophy.notTitle">NO SOMOS</h3>
+                    <ul>
+                        <li data-i18n="philosophy.not.0">No vendemos humo</li>
+                        <li data-i18n="philosophy.not.1">No proponemos locuras</li>
+                        <li data-i18n="philosophy.not.2">No complicamos</li>
+                    </ul>
+                </article>
+                <article class="reveal compare-card" style="--delay: 90ms">
+                    <h3 data-i18n="philosophy.yesTitle">SÍ SOMOS</h3>
+                    <ul>
+                        <li data-i18n="philosophy.yes.0">Sí trabajamos desde la realidad</li>
+                        <li data-i18n="philosophy.yes.1">Sí buscamos máxima eficiencia</li>
+                        <li data-i18n="philosophy.yes.2">Sí innovamos desde lo pequeño</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="ambitos" class="section-spacing scroll-mt-28">
+            <div class="reveal">
+                <p class="eyebrow" data-i18n="sectors.eyebrow">Ámbitos de trabajo</p>
+                <h2 class="section-title" data-i18n="sectors.title">Donde podemos aportar valor de forma inmediata</h2>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+                <span class="reveal sector-chip" data-i18n="sectors.items.0">Industria</span>
+                <span class="reveal sector-chip" style="--delay: 40ms" data-i18n="sectors.items.1">Operaciones</span>
+                <span class="reveal sector-chip" style="--delay: 70ms" data-i18n="sectors.items.2">Procesos
+                    internos</span>
+                <span class="reveal sector-chip" style="--delay: 100ms"
+                    data-i18n="sectors.items.3">Sostenibilidad</span>
+                <span class="reveal sector-chip" style="--delay: 130ms" data-i18n="sectors.items.4">Energía</span>
+                <span class="reveal sector-chip" style="--delay: 160ms" data-i18n="sectors.items.5">Entornos
+                    productivos</span>
+                <span class="reveal sector-chip" style="--delay: 190ms" data-i18n="sectors.items.6">Digitalización
+                    práctica</span>
+            </div>
+        </section>
+
+        <section class="reveal cta-block section-spacing">
+            <p data-i18n="midCta">Las mejores innovaciones no siempre son las más grandes. Son las que funcionan.</p>
+        </section>
+
+        <section id="contacto" class="section-spacing scroll-mt-28">
+            <div class="reveal">
+                <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
+                <h2 class="section-title" data-i18n="contact.title">Hablemos de tu próximo paso</h2>
+            </div>
+
+            <div class="mt-8 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+                <article class="reveal info-panel">
+                    <h3 class="contact-subtitle" data-i18n="contact.emailLabel">Email</h3>
+                    <p><a href="mailto:info@alentio.com"
+                            class="text-alentio-700 hover:text-alentio-800">info@alentio.com</a></p>
+
+                    <h3 class="contact-subtitle mt-8" data-i18n="contact.locationsLabel">Ubicaciones</h3>
+                    <p class="text-stone-700">
+                        <span data-i18n="contact.locations.0">BARCELONA: Av Llunell 16, 08750 Molins de Rei</span>
+                    </p>
+                    <p class="mt-2 text-stone-700">
+                        <span data-i18n="contact.locations.1">LLEIDA: Plaça Magnòlies, 1, 25005 Lleida</span>
+                    </p>
+                </article>
+
+                <form class="reveal contact-form" style="--delay: 80ms" action="#" method="post">
+                    <label>
+                        <span data-i18n="contact.form.name">Nombre</span>
+                        <input type="text" name="nombre" required />
+                    </label>
+                    <label>
+                        <span data-i18n="contact.form.company">Empresa</span>
+                        <input type="text" name="empresa" />
+                    </label>
+                    <label class="md:col-span-2">
+                        <span data-i18n="contact.form.email">Email</span>
+                        <input type="email" name="email" required />
+                    </label>
+                    <label class="md:col-span-2">
+                        <span data-i18n="contact.form.message">Mensaje</span>
+                        <textarea name="mensaje" rows="5" required></textarea>
+                    </label>
+                    <button type="submit" class="btn-primary md:col-span-2 md:w-fit"
+                        data-i18n="contact.form.submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mx-auto max-w-7xl px-6 pb-10 pt-4 lg:px-10">
+        <div
+            class="reveal flex flex-col items-start justify-between gap-5 rounded-2xl border border-stone-200 bg-white/80 px-5 py-5 text-sm text-stone-600 backdrop-blur md:flex-row md:items-center">
+            <img src="assets/logo-alentio.png" alt="Logo de ALENTIO en el pie de página" class="h-7 w-auto" />
+            <p>© <span id="year"></span> ALENTIO. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALENTIO | Información estática</title>
+    <style>
+        :root {
+            --bg: #f4f1ea;
+            --surface: #fffdf9;
+            --ink: #2d2a26;
+            --muted: #5b544d;
+            --line: #ddd5cb;
+            --brand: #ec772b;
+            --brand-dark: #c95c18;
+            --max: 980px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 10% 0%, rgba(236, 119, 43, 0.18), transparent 30%),
+                radial-gradient(circle at 90% 0%, rgba(236, 119, 43, 0.08), transparent 25%),
+                var(--bg);
+            line-height: 1.55;
+        }
+
+        .container {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 28px 20px 56px;
+        }
+
+        .toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            background: rgba(255, 253, 249, 0.92);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            backdrop-filter: blur(5px);
+        }
+
+        .toolbar p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .btn {
+            border: 0;
+            background: var(--brand);
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 9px 14px;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--brand-dark);
+        }
+
+        .hero {
+            padding: 26px;
+            background: linear-gradient(130deg, rgba(255, 255, 255, 0.95), rgba(249, 246, 240, 0.88));
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            box-shadow: 0 16px 34px rgba(25, 20, 15, 0.08);
+        }
+
+        .brand {
+            margin: 0;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            color: var(--brand);
+            font-weight: 800;
+        }
+
+        h1 {
+            margin: 10px 0 10px;
+            font-size: clamp(30px, 4.2vw, 52px);
+            line-height: 1.08;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 72ch;
+        }
+
+        section {
+            margin-top: 22px;
+            padding: 22px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 25px;
+            line-height: 1.2;
+        }
+
+        .eyebrow {
+            margin: 0 0 8px;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--brand);
+        }
+
+        p {
+            margin: 12px 0 0;
+        }
+
+        ul {
+            margin: 12px 0 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .chip {
+            display: inline-block;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 7px 12px;
+            background: #fff;
+            font-size: 14px;
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+            padding: 14px;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 24px;
+            background: linear-gradient(130deg, rgba(255, 255, 255, 0.98), rgba(247, 241, 231, 0.9));
+        }
+
+        .cta p {
+            margin: 0;
+            font-size: 26px;
+            line-height: 1.25;
+            font-weight: 600;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        @media (max-width: 760px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .toolbar {
+                display: none;
+            }
+
+            section,
+            .hero {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            @page {
+                size: A4;
+                margin: 14mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <p>Documento estático listo para compartir o exportar a PDF.</p>
+            <button class="btn" onclick="window.print()">Exportar a PDF</button>
+        </div>
+
+        <header class="hero">
+            <p class="brand">ALENTIO</p>
+            <h1>Innovación real para empresas de verdad</h1>
+            <p class="subtitle">Acompañamos a empresas que quieren innovar con sentido común, diseñando y dirigiendo
+                proyectos tecnológicos reales, eficientes y comprensibles.</p>
+        </header>
+
+        <section>
+            <p class="eyebrow">Quiénes somos</p>
+            <h2>Consultoría cercana de innovación aplicada</h2>
+            <p>ALENTIO es un despacho-taller de innovación: cercano, práctico y orientado a resultados. Acompañamos,
+                orientamos y ejecutamos para bajar las ideas a tierra y convertirlas en proyectos viables.</p>
+            <ul>
+                <li>Pensamos en pequeño para construir en grande</li>
+                <li>Priorizamos quick wins que generan valor desde el inicio</li>
+                <li>Buscamos soluciones claras, sin complicar a tu equipo</li>
+            </ul>
+        </section>
+
+        <section>
+            <p class="eyebrow">Servicios</p>
+            <h2>Capacidad real para diseñar y ejecutar</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Consultoría de innovación</h3>
+                    <p>Definimos una hoja de ruta realista para innovar con foco en impacto, viabilidad y retorno.</p>
+                </article>
+                <article class="card">
+                    <h3>Dirección de proyectos tecnológicos</h3>
+                    <p>Coordinamos equipos, proveedores y decisiones clave para llevar cada proyecto del plan a la
+                        implantación.</p>
+                </article>
+                <article class="card">
+                    <h3>IA y digitalización de procesos</h3>
+                    <p>Identificamos dónde automatizar y aplicar IA de forma útil, comprensible y alineada con tu
+                        operación.</p>
+                </article>
+                <article class="card">
+                    <h3>IoT y gemelos digitales</h3>
+                    <p>Conectamos datos y procesos para tomar mejores decisiones en entornos productivos y operativos.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Diseño tecnológico</h3>
+                    <p>Diseñamos soluciones a medida, escalables y sostenibles, con coste controlado y visión a largo
+                        plazo.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <p class="eyebrow">Cómo trabajamos</p>
+            <h2>Método claro, iterativo y con riesgo controlado</h2>
+            <ol>
+                <li>Escuchamos</li>
+                <li>Detectamos oportunidades</li>
+                <li>Diseñamos una solución realista</li>
+                <li>Buscamos la tecnología y los partners adecuados</li>
+                <li>Implementamos paso a paso</li>
+                <li>Validamos, mejoramos y escalamos</li>
+            </ol>
+            <p class="muted">Trabajamos con ciclos cortos, decisiones claras y máxima comprensión para tu equipo.</p>
+        </section>
+
+        <section>
+            <p class="eyebrow">Nuestra filosofía</p>
+            <h2>Pies en el suelo, resultados en marcha</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>No somos...</h3>
+                    <ul>
+                        <li>No vendemos humo ni promesas vacías</li>
+                        <li>No proponemos grandes locuras fuera de contexto</li>
+                        <li>No complicamos lo que puede ser sencillo</li>
+                        <li>No imponemos soluciones incomprensibles</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Sí somos...</h3>
+                    <ul>
+                        <li>Sí trabajamos desde la realidad de tu empresa</li>
+                        <li>Sí buscamos máxima eficiencia con coste controlado</li>
+                        <li>Sí innovamos desde lo pequeño y escalable</li>
+                        <li>Sí acompañamos de la idea a la implantación</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <p class="eyebrow">Ámbitos de trabajo</p>
+            <h2>Donde podemos aportar valor de forma inmediata</h2>
+            <p>Apoyamos proyectos en empresas que quieren digitalizar y mejorar sin perder foco operativo.</p>
+            <div class="chip-list">
+                <span class="chip">Industria</span>
+                <span class="chip">Operaciones</span>
+                <span class="chip">Procesos internos</span>
+                <span class="chip">Sostenibilidad</span>
+                <span class="chip">Energía</span>
+                <span class="chip">Entornos productivos</span>
+                <span class="chip">Digitalización práctica</span>
+            </div>
+        </section>
+
+        <section class="cta">
+            <p>Las mejores innovaciones no siempre son las más grandes. Son las que funcionan.</p>
+        </section>
+
+        <section>
+            <p class="eyebrow">Contacto</p>
+            <h2>Hablemos de tu próximo paso</h2>
+            <p>Si quieres explorar una oportunidad concreta, te ayudamos a convertirla en un plan claro y ejecutable.
+            </p>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Email</h3>
+                    <p><a href="mailto:hola@alentio.com">hola@alentio.com</a></p>
+                </div>
+                <div class="card">
+                    <h3>Ubicaciones</h3>
+                    <ul>
+                        <li>Molins de Rei</li>
+                        <li>Lleida</li>
+                        <li>Cardedeu</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © <span id="year"></span> ALENTIO. Todos los derechos reservados.
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = String(new Date().getFullYear());
+    </script>
+</body>
+
+</html>
