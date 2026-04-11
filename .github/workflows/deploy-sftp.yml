@@ -13,13 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Upload public folder via SFTP
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy public folder via SFTP
+        uses: samkirkland/ftp-deploy-action@v4
         with:
-          host: ${{ secrets.SFTP_HOST }}
-          port: ${{ secrets.SFTP_PORT }}
+          server: sftp://${{ secrets.SFTP_HOST }}:${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
-          source: "public/*"
-          target: ${{ secrets.SFTP_REMOTE_DIR }}
-          overwrite: true
+          local-dir: ./public
+          server-dir: ${{ secrets.SFTP_REMOTE_DIR }}/
