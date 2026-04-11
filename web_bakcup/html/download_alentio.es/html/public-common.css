@@ -1,0 +1,135 @@
+.modal-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-wrapper .modal {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    max-width: 900px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.45);
+}
+
+.modal-wrapper.visible {
+    visibility: visible;
+    opacity: 1;
+
+    -moz-animation: 0.2s fadeIn 1;
+    -o-animation: 0.2s fadeIn 1;
+    animation: 0.2s fadeIn 1;
+}
+
+.modal-wrapper.hidden {
+    visibility: hidden;
+    opacity: 0;
+    -moz-animation: 0.3s fadeOut 1;
+    -o-animation: 0.3s fadeOut 1;
+    animation: 0.3s fadeOut 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        display: none;
+    }
+}
+
+
+.modal-wrapper .modal .title {
+    width: calc(100% - 70px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px;
+    font-weight: 600;
+}
+
+.modal-wrapper .modal .close {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    cursor: pointer;
+    color: #bababa;
+    font-size: 20px;
+}
+
+.modal-wrapper .modal .close:hover {
+    color: #aaa;
+}
+
+.modal-wrapper .modal .body {
+    height: calc(100% - 180px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.cookies-disclaimer-link {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal .buttons {
+    text-align: right;
+    padding: 30px;
+}
+
+.modal .buttons .button {
+    font-family: Open Sans, sans-serif !important;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 0 10px !important;
+    line-height: 26px !important;
+    vertical-align: middle;
+    display: inline-block;
+    color: #fff !important;
+    cursor: pointer;
+    margin: 0 0 0 20px;
+}
+
+.modal .buttons .button.blue {
+    border: 2px solid #89b0f0;
+    color: #89b0f0 !important;
+}
+
+.modal .buttons .button.grey {
+    border: 2px solid #b2b8c2;
+    color: #b2b8c2 !important;
+}
+
+input[type="file"].hidden {
+    visibility:hidden !important;
+}
