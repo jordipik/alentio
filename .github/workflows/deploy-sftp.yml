@@ -14,12 +14,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Upload public folder via SFTP
-        uses: wangyucode/sftp-upload-action@v1.0.2
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SFTP_HOST }}
           port: ${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
-          localDir: public
-          remoteDir: ${{ secrets.SFTP_REMOTE_DIR }}
-          dryRun: false
+          source: "public/*"
+          target: ${{ secrets.SFTP_REMOTE_DIR }}
+          overwrite: true
