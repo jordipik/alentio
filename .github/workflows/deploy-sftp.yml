@@ -1,0 +1,25 @@
+name: Deploy public via SFTP
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload public folder via SFTP
+        uses: wangyucode/sftp-upload-action@v1.0.2
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          port: ${{ secrets.SFTP_PORT }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASS }}
+          localDir: public
+          remoteDir: ${{ secrets.SFTP_REMOTE_DIR }}
+          dryRun: false
